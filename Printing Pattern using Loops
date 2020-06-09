@@ -6,59 +6,27 @@
 int main() 
 {
 
-   int i=0,j=0;
-    
-    int n;
-    scanf("%d", &n);
-      
-    int row=(n*2)-1;
-    
-    
-    for(i=1;i<=row;i++)
+    int n,i,j;
+
+int mid,num;
+//printf("Enter the n : ");
+scanf("%d",&mid);
+num=mid*2-1;
+for(int i=1; i<=num; i++)
+{
+    for(int j=1; j<=num; j++)
     {
-        for(j=1;j<=row;j++)
-        {
-            if(i==1 || j==1 || i==row || j==row)
-            {
-                printf("%d ",n);
-            }
-           
-           else if(i==2 || j==2 ||j==row-1 || i==row-1)
-           {
-               printf("%d ",n-1);
-           }
-           
-           else if(i==3 || i==row-2 || j==3 || j==row-2)
-           {
-               printf("%d ",n-2);
-           }
-           
-            else if(i==4 || i==row-3 || j==4 || j==row-3)
-           {
-               printf("%d ",n-3);
-           }
-
-              else if(i==5 || i==row-4 || j==5 || j==row-4)
-           {
-               printf("%d ",n-4);
-           }
-           
-            else if(i==6 || i==row-5 || j==6 || j==row-5)
-           {
-               printf("%d ",n-5);
-           }
-
-           
-           else
-           {
-               printf("1 ");
-           }
-           
-          
-        }
-        
-        printf("\n");
+        if(j>=i&&j<=2*mid-i)
+            printf("%d ",mid-i+1);
+        else if(i>=mid && j>=2*mid-i && j<=i)
+            printf("%d ",i-mid+1);
+        else if(i>=j&&i<=2*mid-j)
+            printf("%d ",mid-j+1);
+        else if(j>=mid && i>=2*mid-j && i<=j)
+            printf("%d ",j-mid+1);
     }
+    printf("\n");
+}
 
     return 0;
 }
